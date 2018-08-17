@@ -1,5 +1,5 @@
 class Answers
-  attr_accessor :my_answers
+  attr_accessor :my_answers, :default_answers
 
   def initialize
     @my_answers = [
@@ -24,6 +24,21 @@ class Answers
       "Outlook not so good.", 
       "Very doubtful."
     ]
+
+    @default_answers = @my_answers.clone
+  end
+
+  def add_answer(new_answer)
+    puts "********* ADD AN ANSWER ***********"
+    @my_answers << new_answer
+  end
+  
+  def reset_answers
+    @my_answers = @default_answers
+  end
+  
+  def print_answers
+    puts @my_answers
   end
 
 end
